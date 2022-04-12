@@ -86,6 +86,7 @@ def main(infofile, photofile):
         f.write(head+hash_b+signed_message.signature+info)
     return id
 
+
 if __name__ == "__main__":
     import sys
     main(sys.argv[1], sys.argv[2])
