@@ -88,7 +88,7 @@ def main(file,bc=None):
     im = Image.open("background.png")
     mask = Image.open("mask.png")
     photo = Image.open(io.BytesIO(photo)).convert("RGBA")
-    photo = photo.resize((320, 450))
+    photo = photo.resize((320, 480))
     imd = ImageDraw.ImageDraw(im)
     imd.text((1140, 180), id_short, font=f_number, fill=(244, 62, 66))
     imd.text((500, 308), info["name"], font=f_text, fill=(0, 0, 0))
