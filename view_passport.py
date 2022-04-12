@@ -1,6 +1,5 @@
 def main(file):
     from eth_account import Account, messages
-    import getpass
     import json
     import base64
     import time
