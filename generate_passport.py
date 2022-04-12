@@ -77,14 +77,19 @@ def main(infofile, photofile):
     photo = b''
     with open(photofile, "rb") as f:
         photo = f.read()
+    info_short = info
     info = info+b'\x00'+photo
+    prvkey = getpass.getpass("Your private key: ")
     msg_hash_hex = hashlib.sha512(info).hexdigest()
     message = messages.encode_defunct(hexstr=msg_hash_hex)
-    signed_message = Account.sign_message(
-        message, private_key=getpass.getpass("Your private key: "))
+    signed_message = Account.sign_message(message, private_key=prvkey)
+    msg_hash_hex = hashlib.sha512(info_short).hexdigest()
+    message = messages.encode_defunct(hexstr=msg_hash_hex)
+    signed_shortmessage = Account.sign_message(message, private_key=prvkey)
     with open(id+".tgdpassport", "wb") as f:
         f.write(head+hash_b+signed_message.signature+info)
-    return id
+    bc = b'TGD\x00'+hash_b+signed_shortmessage.signature+info_short
+    return id, bc
 
 
 if __name__ == "__main__":

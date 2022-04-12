@@ -1,4 +1,4 @@
-def main(file):
+def main(file,bc=None):
     from PIL import Image, ImageDraw, ImageFont
     import qrcode
     from eth_account import Account, messages
@@ -6,6 +6,7 @@ def main(file):
     import time
     import hashlib
     import io
+    import pdf417gen
     info = {}
     bin = b''
     alt = {
@@ -80,7 +81,6 @@ def main(file):
     qr_img = qr.make_image(fill_color=(0, 0, 0),
                            back_color="transparent")
     qr.make(fit=True)
-
     f_number = ImageFont.truetype("no-font.ttf", size=60)
     f_text = ImageFont.truetype("text-font.ttf", size=35)
     f_id = ImageFont.truetype("mrz-font.ttf", size=50,
@@ -99,11 +99,14 @@ def main(file):
     imd.text((88, 794), mrz_area1, font=f_id, fill=(0, 0, 0))
     imd.text((88, 874), mrz_area2, font=f_id, fill=(0, 0, 0))
     im.paste(qr_img, (1270, 20), mask=qr_img)
+    if bc is not None:
+        barcode=pdf417gen.encode(bc,columns=12)
+        pdfimg=pdf417gen.render_image(barcode,padding=3,scale=1,ratio=3)
+        #pdfimg=pdfimg.resize((480,100))
+        im.paste(pdfimg, (500, 670))
     im.paste(photo, (120, 240), photo)
     im.alpha_composite(mask)
     im.save(id_short+".png")
-
-
 if __name__ == "__main__":
     import sys
     main(sys.argv[1])
