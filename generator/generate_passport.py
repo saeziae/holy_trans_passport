@@ -61,10 +61,14 @@ info["issue"] = int(time.time())
 mrz_area1 = "P<TGD" + name_readable + "<"*(39-len(name_readable))
 mrz_area2 = ("0x" + hash + "<<")
 id = hash[:4]+hash[-4:]
-print("   Name: " + info["name"])
-print("MR Area: " + mrz_area1)
-print("         " + mrz_area2)
-print("     ID: " + id)
+birth = str(info["birth"])
+print("    Name: " + info["name"])
+print("Pronouns: " + info["pronouns"])
+print("   Place: "+info["place"])
+print("   Birth: "+birth[0:4]+"/"+birth[4:6]+"/"+birth[6:8])
+print(" MR Area: " + mrz_area1)
+print("          " + mrz_area2)
+print("      ID: " + id)
 head = b"TGDPASSPORT\x00"
 hash_b = int(info["hash"], 16).to_bytes(20, "big")
 del info["hash"]
