@@ -1,6 +1,0 @@
-pillow
-opencv-python
-web3
-numpy
-qrcode
-pdf417gen
