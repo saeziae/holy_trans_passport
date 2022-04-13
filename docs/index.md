@@ -23,6 +23,8 @@
 1. 修改 `info.json` 内的个人信息。  
    Fill your personal info in `info.json`:
    - `name` -- 全名 / Full name
+     可用字符：A-Z 与空格（占一个单位）、`ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞß`（占二个单位），总共不超过 38 个单位
+     Allowed alphabets: A-Z and space (treated ad 1 unit) and `ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞß`(treated as 2 units), in total maximum 38 units
    - `birth` -- 生日 / Date of birth
    - `place` -- 出生或重生地点 / Place of Birth or Rebirth
    - `pronouns` -- 偏好的代词 / Preferred pronouns
@@ -30,10 +32,20 @@
      - ELLE/He
      - ELLA/She
      - ILLVD/They
-   - `hash` -- 以太坊钱包地址 / Address of Ethereum wallet
+   - `hash` -- 以太坊钱包地址，不含开头的`0x` / Address of Ethereum wallet without `0x`
 1. 替换照片 `photo.png`。建议尺寸：2:3 比例，128 x 192 或者 320 x 480  
    Replace `photo.png` with others you prefer. Recommended size: 2:3 ratio 128 x 192 or 320 x 480
 1. 生成：`python generate_passport_and_pic.py info.json photo.png`  
    Generate the passport using the command above.
 1. 验证护照真伪：`python view_passport.py 编号.tgdpassport`，真的才会有信息。  
-   If the check for the passport is needed, run `python view_passport.py <Passport_Number>.tgdpassport`.
+   If the check for the passport is needed, run `python view_passport.py <Passport_Number>.tgdpassport`, a valid one will show the info.
+
+## Online ID System / 线上护照信息系统
+
+<https://id.sti.moe> front end is still under construction
+
+But you can upload your passport (a valid one of course) to <https://id.sti.moe/register> now, then it will able for access under `id.sti.moe/storage/<FULL_ID>`
+
+<https://id.sti.moe> 前端绝赞建设中
+
+但是你已经可以将你生成的护照上传到 <https://id.sti.moe/register>，从而可通过 `id.sti.moe/storage/<护照完整ID>`  访问
