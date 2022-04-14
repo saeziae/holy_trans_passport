@@ -32,20 +32,22 @@
      - ELLE/He
      - ELLA/She
      - ILLVD/They
-   - `hash` -- 以太坊钱包地址，不含开头的`0x` / Address of Ethereum wallet without `0x`
+   - `hash` -- 以太坊钱包地址/ Address of Ethereum wallet
 1. 替换照片 `photo.png`。建议尺寸：2:3 比例，128 x 192 或者 320 x 480\
    Replace `photo.png` with others you prefer. Recommended size: 2:3 ratio 128 x 192 or 320 x 480
-1. 生成：`python generate_passport_and_pic.py info.json photo.png`  \
+1. 生成：`python generate_passport_and_pic.py info.json photo.png` \
    Generate the passport using the command above.
 1. 验证护照真伪：`python view_passport.py 编号.tgdpassport`，真的才会有信息。\
    If the check for the passport is needed, run `python view_passport.py <Passport_Number>.tgdpassport`, a valid one will show the info.
 
 ## Online ID System / 线上护照信息系统
 
-<https://id.sti.moe> front end is still under construction
+<https://id.sti.moe>
 
-But you can upload your passport (a valid one of course) to <https://id.sti.moe/register> now, then it will able for access under `id.sti.moe/storage/<FULL_ID>`
+查询护照：访问 `id.sti.moe/?<完整号码>`，如<https://id.sti.moe/?F3A58219E1613C7845F6A24B69CDBC9BF0D61708>
 
-<https://id.sti.moe> 前端绝赞建设中
+Query a passport: visit `id.sti.moe/?<full id>`, eg <https://id.sti.moe/?F3A58219E1613C7845F6A24B69CDBC9BF0D61708>
 
-但是你已经可以将你生成的护照上传到 <https://id.sti.moe/register>，从而可通过 `id.sti.moe/storage/<护照完整ID>`  访问
+你可以将你生成的护照上传到 <https://id.sti.moe/register>
+
+You can upload your passport (a valid one of course) to <https://id.sti.moe/register>
