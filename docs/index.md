@@ -51,3 +51,11 @@ Query a passport: visit `id.sti.moe/?<full id>`, eg <https://id.sti.moe/?F3A5821
 你可以将你生成的护照上传到 <https://id.sti.moe/register>
 
 You can upload your passport (a valid one of course) to <https://id.sti.moe/register>
+
+## Catgirl Coin (NEKO) / 猫娘币
+
+Polygon Contract: [0x5aBebe9361b7af7582b3f62E5DA9e2cabC22149c](https://polygonscan.com/token/0x5abebe9361b7af7582b3f62e5da9e2cabc22149c)
+
+buy uploading your passport to <https://id.sti.moe/register>, you have a chance to get 100 NEKO~
+
+在 <https://id.sti.moe/register> 登记护照，将有机会获得 100 猫娘币~
